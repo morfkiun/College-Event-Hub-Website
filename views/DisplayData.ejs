@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>Home Page</title>
+      
+    <style type="text/css" media="screen">
+        body {
+            background-color: skyblue;
+            text-decoration-color: white;
+            font-size:7em; 
+        }
+    </style>
+</head>
+  
+<body>
+    <center>This is our home page.<br/>
+        Welcome <%=userData.recordset[0].Name%>, to our home page.</center>
+
+    <form action="/" method="POST">
+
+        <% for (var i = 0; i < allData.recordset.length; i++) { %>    
+            <input type="radio" id="choice" name="choice" value="value">
+            <label for="choice"><%=allData.recordset[i].Name + " " + allData.recordset[i].Email + " " + allData.recordset[i].Phone_Number%></label><br>
+        <% } %>
+        <input type = "submit" id = 'query' value = 'Get Results'/>
+    </form>
+</body>
+  
+</html>  

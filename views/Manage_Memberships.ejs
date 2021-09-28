@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/Header') %>
+<body>
+
+<!-- Sidebar/menu -->
+<%- include('partials/navBar') %>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 id = "demo" class="w3-jumbo"><b>Manage Memberships</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b></b>Instructions:</h1>
+    <p><b>Please select RSOs you want to leave, then press the Submit button</b> <br><br></p>
+    <form id = "form" action = "javascript:checkSubmit()">
+
+        <input type = "submit">
+    </form>
+
+  </div>
+  <br>
+  <table id = "table_display">
+  </table>
+
+<!-- End page content -->
+</div>
+
+<script>
+</script>
+
+<script src = "scripts/Manage_Memberships_Methods.js"></script>
+
+<script>
+  displayRSOs();
+</script>
+
+</body>
+</html>

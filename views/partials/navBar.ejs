@@ -1,0 +1,61 @@
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="w3-container">
+      <h3 class="w3-padding-64"><b>College<br>Event</b><br>Website</b></h3>
+    </div>
+    <div class="w3-bar-block">
+      <a onclick="submitform('Home', userAccessString, userDataString)" class="w3-bar-item w3-button w3-hover-white">Home</a>
+      <a onclick="submitform('Logout', userAccessString, userDataString)" class="w3-bar-item w3-button w3-hover-white">Log Out</a>
+      <a onclick="submitform('Search_Events', userAccessString, userDataString)" class="w3-bar-item w3-button w3-hover-white">Search Events</a>
+      <% if (!userAccess[2]) { %>
+        <a onclick="submitform('Create_RSO', userAccessString, userDataString)"  class="w3-bar-item w3-button w3-hover-white">Create RSO</a>
+        <a onclick="submitform('Join_RSO', userAccessString, userDataString)" class="w3-bar-item w3-button w3-hover-white">Join RSO</a>
+        <a onclick="submitform('Manage_Memberships', userAccessString, userDataString)" class="w3-bar-item w3-button w3-hover-white">Manage My RSOs</a>
+      <% } %>
+      <% if (!userAccess[0]) { %>
+        <% if (userAccess[1]) { %>
+          <a onclick="submitform('Create_Events', userAccessString, userDataString)" class="w3-bar-item w3-button w3-hover-white">Create Events</a>
+          <a onclick="submitform('Approve_Membership_Requests', userAccessString, userDataString)" class="w3-bar-item w3-button w3-hover-white">Approve Membership Requests</a>
+        <% } %>
+        <% if (userAccess[2]) { %>
+          <a onclick="submitform('Create_University_Profiles', userAccessString, userDataString)" class="w3-bar-item w3-button w3-hover-white">Create University Profiles</a>
+          <a onclick="submitform('Approve_RSO', userAccessString, userDataString)" class="w3-bar-item w3-button w3-hover-white">Approve RSO</a>
+        <% } %>
+      <% } %>
+    </div>
+</nav>
+
+<script>
+function submitform(page, userAccessString, userDataString) {
+    var form = document.createElement("FORM");
+    url = '/navBar';
+    form.setAttribute("action", url);
+    form.setAttribute("method", "post");
+
+    var userData = document.createElement("input");
+    userData.setAttribute("type", "hidden");
+    userData.setAttribute("name", "userData");
+    userData.setAttribute("value", userDataString);
+
+    var userAccess = document.createElement("input");
+    userAccess.setAttribute("type", "hidden");
+    userAccess.setAttribute("name", "userAccess");
+    userAccess.setAttribute("value", userAccessString);
+
+    var page_input = document.createElement("input");
+    page_input.setAttribute("type", "hidden");
+    page_input.setAttribute("name", "page");
+    page_input.setAttribute("value", page);
+
+    var s = document.createElement("input");
+    s.setAttribute("type", "submit");
+    s.setAttribute("value", "Submit");
+
+    form.appendChild(userData);
+    form.appendChild(userAccess);
+    form.appendChild(page_input);
+    form.appendChild(s);
+    document.body.appendChild(form);
+    form.submit();
+}
+</script>

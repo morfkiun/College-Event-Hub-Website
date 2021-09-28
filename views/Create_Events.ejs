@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/Header') %>
+<body>
+
+<!-- Sidebar/menu -->
+<%- include('partials/navBar') %>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 id = "demo" class="w3-jumbo"><b>Create Events</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Instructions:</b></h1>
+    <p><b>Please fill out form as accurately as possible</b> <br><br></p>
+    <form id = "new_event_form" action = "javascript:checkSubmit(userDataString)">
+        <label id = "event_type_select_label" for="event_type_select">Event Type:</label>
+        <select id="event_type_select" name = "event_type_select" form = "new_event_form" required>
+            <option value = "" label = ""></option>
+            <option value = "Public" label = "Public"></option>
+            <option value = "Private" label = "Private"></option>
+            <option value = "RSO" label = "RSO"></option>
+        </select>
+
+        <label id = "RSO_select_label" for="RSO_select"><br><br>RSO:</label>
+        <select id="RSO_select" name = "RSO_select" form = "new_event_form" required>
+        </select>
+
+        <br><br>
+        
+        <label for="event_name">Event Name:   </label>
+        <input type="text" id="event_name" name = "event_name" required>
+        
+        <br><br>
+
+        <label id = "location_select_label" for="location_select">Location:   </label>
+        <select id="location_select" name = "location_select" form = "new_event_form" required>
+        </select>
+
+        <br><br>
+
+        <label id = "date_label" for="date">Date:   </label>
+        <input type="date" id="date" name = "date" required>
+
+        <br><br>
+
+        <label id = "start_time_label" for="start_time">Start Time:   </label>
+        <input type="time" id="start_time" name = "start_time" required>
+
+        <br><br>
+
+        <label id = "end_time_label" for="end_time">End Time:   </label>
+        <input type="time" id="end_time" name = "end_time" required>
+
+        <br><br>
+
+        <label for="description">Description:<br></label>
+        <textarea id="description" name = "description" rows = "10" cols = "50" vertical-align = "middle"></textarea><br><br>
+        <input type = "submit">
+    </form>
+
+
+
+  </div>
+
+<!-- End page content -->
+</div>
+
+<script>
+</script>
+
+<script src = "scripts/Create_Events_Methods.js"></script>
+
+<script>
+  fillSelect("RSOs", "Name", "RSOID", "RSO_select", "none");
+  fillSelect("Location", "Name", "LID", "location_select", "");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/Header') %>
+<body>
+
+<!-- Sidebar/menu -->
+<%- include('partials/navBar') %>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 id = "demo" class="w3-jumbo"></h1>
+  </div>
+
+<!-- End page content -->
+</div>
+
+<script>
+  name = '<%= userData.recordset[0].Name %>';
+  document.getElementById("demo").innerHTML = "<b>Welcome, </b><b><br>" + name + "</b>";
+</script> 
+
+</body>
+</html>

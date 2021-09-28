@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/Header') %>
+<body>
+
+<!-- Sidebar/menu -->
+<%- include('partials/navBar') %>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 id = "demo" class="w3-jumbo"><b>Approve Membership Requests</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b></b>Instructions:</h1>
+    <p><b>Please select applicants and choose in the box whether to reject or accept, then press the Submit button</b> <br><br></p>
+    <form id = "form" action = "javascript:checkSubmit()">
+        <label id = "select_label" for="select"></label>
+        <select id="select" for = "form" required>
+            <option value = "" label = ""></option>
+            <option value = "Approve" label = "Approve"></option>
+            <option value = "Reject" label = "Reject"></option>
+        </select>
+
+        <br><br>
+
+        <table id = "table_display">
+        </table>
+
+        <br><br>
+
+        <input type = "submit">
+    </form>
+
+  </div>
+
+<!-- End page content -->
+</div>
+
+<script>
+</script>
+
+<script src = "scripts/Approve_Membership_Requests_Methods.js"></script>
+
+<script>
+  displayMembershipRequests(userDataString);
+</script>
+
+</body>
+</html>

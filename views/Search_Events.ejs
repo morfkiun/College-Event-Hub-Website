@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/Header') %>
+<body>
+
+<!-- Sidebar/menu -->
+<%- include('partials/navBar') %>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 id = "demo" class="w3-jumbo"><b>Search Events</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Search by:</b></h1>
+    <form id = "search_form">
+        <input type="radio" id="search_by_location" name="select" value="search_by_location">
+        <label for="search_by_location">Location in University</label><br>
+        <input type="radio" id="search_by_university" name="select" value="search_by_university">
+        <label for="search_by_university">University</label><br>
+    </form>
+
+    <h1></h1>
+    <label id = "select_label" for="select"></label>
+    <select id="select">
+    </select>
+
+    <form action = "javascript:checkSubmit()">
+      <label for = "submit_button" id = "submit_button_label"><br><br>Please select an event and press the submit button to see more details:</label>
+      <input type = "submit" id = "submit_button">
+    </form>
+
+    <h1></h1>
+    <table id = "table_display">
+    </table>
+  </div>
+
+<!-- End page content -->
+</div>
+
+<script>
+  document.getElementById("table_display").style.display = "none";
+  document.getElementById("select").style.display = "none";
+  document.getElementById("select_label").style.display = "none";
+  document.getElementById("submit_button").style.display = "none";
+  document.getElementById("submit_button_label").style.display = "none";
+</script>
+
+<script src = "scripts/Search_Events_Methods.js"></script>
+
+<script>
+  initializeEventListenersForSearchEvents(userAccessString, userDataString);
+</script>
+
+</body>
+</html>

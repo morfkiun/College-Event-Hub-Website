@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/Header') %>
+<body>
+
+<!-- Sidebar/menu -->
+<%- include('partials/navBar') %>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 id = "demo" class="w3-jumbo"><b>Event Details</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b></b></h1>
+
+    <br><br>
+
+    <table id = "event_details_table">
+    </table>
+
+    <br><br>
+
+    <form action = "javascript:checkSubmit(targetEID)">
+        <label class="w3-xxxlarge w3-text-red" for = "user_comment_table"><b>My Comment for Event</b></label>
+        <table id = "user_comment_table">
+            <thead>
+                <th>Rating</th><th>Comment</th><th>Timestamp</th>
+            </thead>
+            <tr id = "user_input_row">
+                <td>
+                    <select id="rating_select" name = "rating_select" required>
+                        <option value = "" label = ""></option>
+                        <option value = "5" label = "5"></option>
+                        <option value = "4" label = "4"></option>
+                        <option value = "3" label = "3"></option>
+                        <option value = "2" label = "2"></option>
+                        <option value = "1" label = "1"></option>
+                    </select>
+                </td>
+                <td>
+                    <textarea id="user_comment" rows = "10" cols = "50" vertical-align = "middle"></textarea>
+                </td>
+                <td id = "timestamp_cell">
+
+                </td>
+            </tr>
+        </table>
+        <label for = "save_button" id = "save_button_label"><br>Press Save button to save your comment:</label>
+        <input type = "submit" id = "save_button" value = "Save">
+    </form>
+
+    <form action = "javascript:deleteUserCommentButton(targetEID)">
+        <label for = "delete_button" id = "delete_button_label"><br>Press Delete button to delete your comment:</label>
+        <input type = "submit" id = "delete_button" value = "Delete">
+    </form>
+
+    <br><br>
+
+    <label class="w3-xxxlarge w3-text-red" for = "all_comments_table"><b>Comments for Event</b></label>
+    <table id = "all_comments_table">
+    </table>
+  </div>
+
+<!-- End page content -->
+</div>
+
+<script>
+    var targetEID = parseInt('<%- EID %>');
+</script>
+
+<script src = "scripts/Event_Details_Methods.js"></script>
+
+<script>
+    displayPageInfo(targetEID);
+</script>
+
+</body>
+</html>

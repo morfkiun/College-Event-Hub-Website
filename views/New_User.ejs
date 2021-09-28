@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Home Page (used W3.CSS Template)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+
+<body>
+
+<!-- Sidebar/menu -->
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 id = "demo" class="w3-jumbo"><b>Register As New User</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Instructions:</b></h1>
+    <p><b>Please fill out form as accurately as possible</b> <br><br></p>
+    <form id = "form" action = "javascript:checkSubmit()">
+        
+        <label for="name">Name:   </label>
+        <input type="text" id="name" name = "name" maxlength = "40" required>
+
+        <br><br>
+
+        <label for="password">Password:   </label>
+        <input type="text" id="password" name = "password" required maxlength = "40">
+
+        <br><br>
+        
+        <label for="email">Email:   </label>
+        <input type="email" id="email" name = "email" required maxlength = "40">
+
+        <br><br>
+
+        <label for="phone">Phone Number:   </label>
+        <input type="tel" id="phone" name = "phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="ex: 904-123-4567">
+
+        <br><br>
+
+        <label id = "university_label" for="university">University Currently Attending:</label>
+        <select id="university" name = "university" form = "form" required>
+        </select>
+        
+        <br><br>
+
+        <input type = "submit">
+    </form>
+
+
+
+  </div>
+
+<!-- End page content -->
+</div>
+
+<script>
+</script>
+
+<script src = "scripts/New_User_Methods.js"></script>
+
+<script>
+  fillSelect("University", "Name", "UNIID", "university", "");
+</script>
+
+</body>
+</html>

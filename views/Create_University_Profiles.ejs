@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/Header') %>
+<body>
+
+<!-- Sidebar/menu -->
+<%- include('partials/navBar') %>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 id = "demo" class="w3-jumbo"><b>Create University Profiles</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Instructions:</b></h1>
+    <p><b>Please fill out form as accurately as possible</b> <br><br></p>
+    <form id = "university_profile_form" action = "javascript:checkSubmit()">
+        <label for="university_name">University Name:   </label>
+        <input type="text" id="university_name" name = "university_name" required><br><br>
+        <label id = "select_label" for="select">Location:   </label>
+        <select id="select" name = "location" form = "university_profile_form" required>
+        </select><br><br>
+        <label for="description">Description:<br></label>
+        <textarea id="description" name = "description" rows = "10" cols = "50" vertical-align = "middle"></textarea><br><br>
+        <input type = "submit">
+    </form>
+
+
+
+  </div>
+
+<!-- End page content -->
+</div>
+
+<script>
+</script>
+
+<script src = "scripts/Create_University_Profiles_Methods.js"></script>
+
+<script>
+  fillSelect("Location", "Name", "LID");
+</script>
+
+</body>
+</html>

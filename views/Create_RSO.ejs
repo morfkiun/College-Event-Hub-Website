@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/Header') %>
+<body>
+
+<!-- Sidebar/menu -->
+<%- include('partials/navBar') %>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 id = "demo" class="w3-jumbo"><b>Create RSO</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Instructions:</b></h1>
+    <p><b>Please give 4 emails of other students that are joining this RSO.<br>Note: All members must have the same email domain and must be registered users.</b> <br><br></p>
+    <form id = "RSO_form" action = "javascript:checkSubmit()">
+        
+        <label for="email1">Email 1:</label>
+        <input type="email" id="email1" required>
+        
+        <br><br>
+
+        <label for="email2">Email 2:</label>
+        <input type="email" id="email2" required>
+        
+        <br><br>
+
+        <label for="email3">Email 3:</label>
+        <input type="email" id="email3" required>
+        
+        <br><br>
+
+        <label for="email4">Email 4:</label>
+        <input type="email" id="email4" required>
+        
+        <br><br>
+
+        <p><b>Please give the email of the person who will be assigned as an admin of the RSO.</b> <br><br></p>
+        <label for="admin_email">Admin Email:</label>
+        <input type="email" id="admin_email" required>
+        
+        <br><br>
+
+        <label for="RSO_Name">RSO Name:</label>
+        <input type="text" id="RSO_Name" required>
+        
+        <br><br>
+
+        <input type = "submit">
+    </form>
+
+
+
+  </div>
+
+<!-- End page content -->
+</div>
+
+<script>
+</script>
+
+<script src = "scripts/Create_RSO_Methods.js"></script>
+
+<script>
+  //fillSelect("RSOs", "Name", "RSOID", "RSO_select", "none");
+  //fillSelect("Location", "Name", "LID", "location_select", "");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/Header') %>
+<body>
+
+<!-- Sidebar/menu -->
+<%- include('partials/navBar') %>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 id = "demo" class="w3-jumbo"><b>Join RSO</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Instructions:</b></h1>
+    <p><b>Please select from the textbox the RSO you want to join, then press the Submit button. Please be aware this is a request and 
+        this may not be approved by the RSO admin.
+    </b> <br><br></p>
+    <form id = "new_event_form" action = "javascript:checkSubmit(userDataString)">
+
+        <label id = "RSO_select_label" for="RSO_select"><br><br>RSO:</label>
+        <select id="RSO_select" name = "RSO_select" form = "new_event_form" required>
+        </select>
+        
+        <br><br>
+
+        <input type = "submit">
+    </form>
+
+
+
+  </div>
+
+<!-- End page content -->
+</div>
+
+<script>
+</script>
+
+<script src = "scripts/Join_RSO_Methods.js"></script>
+
+<script>
+  fillSelect("RSOs", "Name", "RSOID", "RSO_select", "");
+</script>
+
+</body>
+</html>
